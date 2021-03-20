@@ -1,0 +1,24 @@
+behaviors:
+  BallAgent:
+    trainer_type: ppo
+    hyperparameters:      
+      batch_size: 128    
+      buffer_size: 5000
+      learning_rate: 3.0e-4
+      beta: 1.0e-3
+      epsilon: 0.15
+      lambd: 0.92    
+      learning_rate_schedule: linear
+    network_settings:
+      hidden_units: 128
+      normalize: true
+      num_layers: 3
+      num_epoch: 3
+    reward_signals:
+      extrinsic:
+        strength: 1.0
+        gamma: 0.99
+    max_steps: 2.0e6
+    time_horizon: 128
+    summary_freq: 50000
+    
